@@ -1,0 +1,22 @@
+{
+    "name": "xxutianyi/php-simple-request",
+    "description": "Packaged Http Json Request Library use Guzzlehttp",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SimpleRequest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "徐添翼 XuTianyi",
+            "email": "xutianyi12@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "guzzlehttp/guzzle": "^7.5"
+    }
+}
