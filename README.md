@@ -10,11 +10,9 @@ composer require xxutianyi/php-simple-request
 ```
 use SimpleRequest\Request
 
-$resquest = Request::get('url','query','headers');
-$resquest = Request::post('url','query','params','form','headers');
-$resquest = Request::put('url','query','params','headers');
-$resquest = Request::delete('url','query','headers');
-
-$content = $request->getContent();
+$content = Request::get('url','query','headers');
+$content = Request::post('url','query','params','form','headers');
+$content = Request::put('url','query','params','headers');
+$content = Request::delete('url','query','headers');
 
 ```
