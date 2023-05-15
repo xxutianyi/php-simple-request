@@ -9,19 +9,19 @@ namespace SimpleRequest;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Psr\Http\Message\StreamInterface;
 
 class Request
 {
 
+
     /**
      * @param string $url
-     * @param array $query
+     * @param array|string $query
      * @param array $headers
-     * @return StreamInterface
+     * @return string
      * @throws GuzzleException
      */
-    public static function get(string $url, array $query = [], array $headers = []): StreamInterface
+    public static function get(string $url, array|string $query = [], array $headers = []): string
     {
         $client = new Client();
         return $client->get(
@@ -30,19 +30,19 @@ class Request
                 'headers' => $headers,
                 'query' => $query,
             ]
-        )->getBody();
+        )->getBody()->getContents();
     }
 
     /**
      * @param string $url
-     * @param array $query
+     * @param array|string $query
      * @param array $params
      * @param array $form
      * @param array $headers
-     * @return StreamInterface
+     * @return string
      * @throws GuzzleException
      */
-    public static function post(string $url, array $query = [], array $params = [], array $form = [], array $headers = []): StreamInterface
+    public static function post(string $url, array|string $query = [], array $params = [], array $form = [], array $headers = []): string
     {
         $client = new Client();
         return $client->post(
@@ -53,18 +53,18 @@ class Request
                 'json' => $params,
                 'multipart' => $form,
             ]
-        )->getBody();
+        )->getBody()->getContents();
     }
 
     /**
      * @param string $url
-     * @param array $query
+     * @param array|string $query
      * @param array $params
      * @param array $headers
-     * @return StreamInterface
+     * @return string
      * @throws GuzzleException
      */
-    public static function put(string $url, array $query = [], array $params = [], array $headers = []): StreamInterface
+    public static function put(string $url, array|string $query = [], array $params = [], array $headers = []): string
     {
         $client = new Client();
         return $client->put(
@@ -74,17 +74,17 @@ class Request
                 'query' => $query,
                 'json' => $params,
             ]
-        )->getBody();
+        )->getBody()->getContents();
     }
 
     /**
      * @param string $url
-     * @param array $query
+     * @param array|string $query
      * @param array $headers
-     * @return StreamInterface
+     * @return string
      * @throws GuzzleException
      */
-    public static function delete(string $url, array $query = [], array $headers = []): StreamInterface
+    public static function delete(string $url, array|string $query = [], array $headers = []): string
     {
         $client = new Client();
         return $client->delete(
@@ -93,6 +93,6 @@ class Request
                 'headers' => $headers,
                 'query' => $query,
             ]
-        )->getBody();
+        )->getBody()->getContents();
     }
 }
