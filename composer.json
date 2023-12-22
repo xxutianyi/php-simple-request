@@ -1,0 +1,23 @@
+{
+    "name": "xxutianyi/simple-request",
+    "description": "Simple Request Library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SimpleRequest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "XuTianyi",
+            "email": "xutianyi310@163.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    }
+}
